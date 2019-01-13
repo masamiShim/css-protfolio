@@ -1,6 +1,7 @@
-@import "_reset.scss";
-@import "_base.scss";
-@import "_base-style.scss";
+@import "../base/reset";
+@import "../base/base";
+@import "../base/base-style";
+
 body {
   color: $font-base-color;
   font-size: 14px;

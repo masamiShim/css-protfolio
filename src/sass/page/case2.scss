@@ -1,5 +1,6 @@
-@import "_reset";
+@import "../base/reset";
 $font-base-size: 14px;
+
 %action-list-item__base{
   float: left;
   display: block;
@@ -8,16 +9,19 @@ $font-base-size: 14px;
   box-sizing: border-box;
   background-color: #cfcfcf;
 }
+
 %image-card__base {
   display:block;
   float: left;
   box-sizing: border-box;
 }
+
 .dummy {
   border: 1px solid red;
   background-color: #ababab;
   height: 100%;
 }
+
 body {
   font-size: $font-base-size;
 }
