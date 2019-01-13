@@ -12,7 +12,8 @@ gulp.task('sass', function() {
 gulp.task('server', function () {
     return bs.init({
         server: {
-            baseDir: './src/'
+            baseDir: 'src',
+            index: 'src/html/case2.html'
         }
     });
 });
@@ -21,7 +22,8 @@ gulp.task('reload', function () {
     bs.reload();
 });
 
-gulp.task('watch', gulp.series('server', function () {
-    gulp.watch('./src/sass/*.scss', gulp.task('sass'));
-    gulp.watch('./src/html/*.html', gulp.task('reload'));
+gulp.task('watch', gulp.parallel('server', function () {
+    gulp.watch('src/sass/*.scss', gulp.task('sass'));
+    gulp.watch('src/html/*.html').on('change', gulp.task('reload'));
+    gulp.watch('src/css/*.css').on('change', gulp.task('reload'));
 }));
